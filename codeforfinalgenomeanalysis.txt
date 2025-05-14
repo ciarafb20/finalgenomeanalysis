@@ -1,0 +1,50 @@
+# Downloaded my genome files and saved them in a folder called 
+finalgenomeanalysis on my desktop. 
+
+# Created an environment in conda for my finalgenomeanalysis:
+conda create -n finalgenomeanalysis -c bioconda -c conda-forge abyss quast 
+dfast fastani spades=4.1.0 
+
+# Activated my environment:
+conda activate finalgenomeanalysis
+
+# Located my folder in Terminal:
+pwd
+cd /Users/ciarablanco/Desktop/finalgenomeanalysis
+
+# Ran SPAdes version 4.1.0
+spades.py -1 SRR33049458_1.fastq.gz -2 SRR33049458_2.fastq.gz -o spadesout
+
+# Ran ABySS 2.3.7
+abyss-pe name=assembly k=96 B=2G in='SRR33049458_1.fastq.gz 
+SRR33049458_2.fastq.gz'
+
+# De-cluttered ABySS results:
+mkdir abyssout 
+mv assembly* abyssout/ 
+
+# Note: I am interested in the assembly-scaffolds.fa and 
+assembly-stats.csv files from by ABySS output.
+
+# Checked the quality of SPAdes assembly using QUAST v5.3.0
+quast.py spadesout/scaffolds.fasta -o quastspades 
+
+# Checked the quality of ABySS assembly using QUAST
+quast.py abyssout/assembly-scaffolds.fa -o quastabyss 
+
+# Looked at both QUAST report.txt files and determined that the SPAdes 
+assembly was the best fit.
+
+# Downloaded eight related genomes: altanticus, diazotrophicus, 
+penaeicids, ponticus, rumoiensis, tasmaniensis, tritonius, and vulnificus 
+and saved the GCF files as .fasta files
+
+# Created neighbors.txt file with my related genome files
+
+# Ran fastANI v1.34 to identify average nucleotide identity between my 
+assembled genome and the three related genomes I downloaded:
+fastANI -q spadesout/scaffolds.fasta --rl neighbors.txt -o 
+vibrioneighbors.txt
+
+
+

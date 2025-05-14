@@ -1,0 +1,8 @@
+atlanticus.fasta
+diazotrophicus.fasta
+penaeicida.fasta
+ponticus.fasta
+rumoiensis.fasta
+tasmaniensis.fasta
+tritonius.fasta
+vulnificus.fasta

@@ -1,0 +1,5 @@
+spadesout/scaffolds.fasta	vulnificus.fasta	78.912	414	1320
+spadesout/scaffolds.fasta	diazotrophicus.fasta	78.8503	378	1320
+spadesout/scaffolds.fasta	ponticus.fasta	78.7645	337	1320
+spadesout/scaffolds.fasta	tritonius.fasta	78.6619	309	1320
+spadesout/scaffolds.fasta	atlanticus.fasta	78.1464	269	1320

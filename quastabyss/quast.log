@@ -1,0 +1,62 @@
+/Users/ciarablanco/miniconda3/envs/finalgenomeanalysis/bin/quast.py abyssout/assembly-scaffolds.fa -o quastabyss
+
+Version: 5.3.0
+
+System information:
+  OS: macOS-12.7.6-x86_64-i386-64bit-Mach-O (macosx)
+  Python version: 3.13.3
+  CPUs number: 4
+
+Started: 2025-05-12 12:37:30
+
+Logging to /Users/ciarablanco/Desktop/finalgenomeanalysis/quastabyss/quast.log
+NOTICE: Maximum number of threads is set to 1 (use --threads option to set it manually)
+
+CWD: /Users/ciarablanco/Desktop/finalgenomeanalysis
+Main parameters: 
+  MODE: default, threads: 1, min contig length: 500, min alignment length: 65, min alignment IDY: 95.0, \
+  ambiguity: one, min local misassembly length: 200, min extensive misassembly length: 1000
+
+Contigs:
+  Pre-processing...
+  abyssout/assembly-scaffolds.fa ==> assembly-scaffolds
+
+2025-05-12 12:37:31
+Running Basic statistics processor...
+  Contig files: 
+    assembly-scaffolds
+  Calculating N50 and L50...
+    assembly-scaffolds, N50 = 57580, L50 = 22, auN = 65738.4, Total length = 4021995, GC % = 47.50, # N's per 100 kbp =  42.14
+  Drawing Nx plot...
+    saved to /Users/ciarablanco/Desktop/finalgenomeanalysis/quastabyss/basic_stats/Nx_plot.pdf
+  Drawing cumulative plot...
+    saved to /Users/ciarablanco/Desktop/finalgenomeanalysis/quastabyss/basic_stats/cumulative_plot.pdf
+  Drawing GC content plot...
+    saved to /Users/ciarablanco/Desktop/finalgenomeanalysis/quastabyss/basic_stats/GC_content_plot.pdf
+  Drawing assembly-scaffolds GC content plot...
+    saved to /Users/ciarablanco/Desktop/finalgenomeanalysis/quastabyss/basic_stats/assembly-scaffolds_GC_content_plot.pdf
+Done.
+
+NOTICE: Genes are not predicted by default. Use --gene-finding or --glimmer option to enable it.
+
+2025-05-12 12:37:32
+Creating large visual summaries...
+This may take a while: press Ctrl-C to skip this step..
+  1 of 2: Creating PDF with all tables and plots...
+  2 of 2: Creating Icarus viewers...
+Done
+
+2025-05-12 12:37:32
+RESULTS:
+  Text versions of total report are saved to /Users/ciarablanco/Desktop/finalgenomeanalysis/quastabyss/report.txt, report.tsv, and report.tex
+  Text versions of transposed total report are saved to /Users/ciarablanco/Desktop/finalgenomeanalysis/quastabyss/transposed_report.txt, transposed_report.tsv, and transposed_report.tex
+  HTML version (interactive tables and plots) is saved to /Users/ciarablanco/Desktop/finalgenomeanalysis/quastabyss/report.html
+  PDF version (tables and plots) is saved to /Users/ciarablanco/Desktop/finalgenomeanalysis/quastabyss/report.pdf
+  Icarus (contig browser) is saved to /Users/ciarablanco/Desktop/finalgenomeanalysis/quastabyss/icarus.html
+  Log is saved to /Users/ciarablanco/Desktop/finalgenomeanalysis/quastabyss/quast.log
+
+Finished: 2025-05-12 12:37:32
+Elapsed time: 0:00:02.043983
+NOTICEs: 2; WARNINGs: 0; non-fatal ERRORs: 0
+
+Thank you for using QUAST!

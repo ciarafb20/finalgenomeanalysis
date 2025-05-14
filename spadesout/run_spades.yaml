@@ -1,0 +1,162 @@
+- STAGE: Before start
+  args: []
+  config_dir: ''
+  del_after: []
+  output_files: []
+  path: 'true'
+  short_name: before_start
+- STAGE: Read error correction
+  args: []
+  config_dir: ''
+  del_after: []
+  output_files: []
+  path: 'true'
+  short_name: ec_start
+- STAGE: Read error correction
+  args:
+  - /Users/ciarablanco/Desktop/finalgenomeanalysis/spadesout/corrected/configs/config.info
+  config_dir: corrected
+  del_after:
+  - tmp/hammer_a892vclt
+  output_files:
+  - /Users/ciarablanco/Desktop/finalgenomeanalysis/spadesout/corrected/corrected.yaml
+  path: /Users/ciarablanco/miniconda3/envs/finalgenomeanalysis/bin/spades-hammer
+  short_name: ec_runtool
+- STAGE: corrected reads compression
+  args:
+  - /Users/ciarablanco/miniconda3/envs/finalgenomeanalysis/share/spades/spades_pipeline/scripts/compress_all.py
+  - --input_file
+  - /Users/ciarablanco/Desktop/finalgenomeanalysis/spadesout/corrected/corrected.yaml
+  - --ext_python_modules_home
+  - /Users/ciarablanco/miniconda3/envs/finalgenomeanalysis/share/spades
+  - --max_threads
+  - '16'
+  - --output_dir
+  - /Users/ciarablanco/Desktop/finalgenomeanalysis/spadesout/corrected
+  - --gzip_output
+  config_dir: ''
+  del_after: []
+  output_files: []
+  path: /Users/ciarablanco/miniconda3/envs/finalgenomeanalysis/bin/python3
+  short_name: ec_compress
+- STAGE: Read error correction
+  args: []
+  config_dir: ''
+  del_after: []
+  output_files: []
+  path: 'true'
+  short_name: ec_finish
+- STAGE: Assembling
+  args: []
+  config_dir: ''
+  del_after: []
+  output_files: []
+  path: 'true'
+  short_name: as_start
+- STAGE: K21
+  args:
+  - /Users/ciarablanco/Desktop/finalgenomeanalysis/spadesout/K21/configs/config.info
+  config_dir: K21
+  del_after: []
+  output_files: []
+  path: /Users/ciarablanco/miniconda3/envs/finalgenomeanalysis/bin/spades-core
+  short_name: k21
+- STAGE: K33
+  args:
+  - /Users/ciarablanco/Desktop/finalgenomeanalysis/spadesout/K33/configs/config.info
+  config_dir: K33
+  del_after: []
+  output_files: []
+  path: /Users/ciarablanco/miniconda3/envs/finalgenomeanalysis/bin/spades-core
+  short_name: k33
+- STAGE: K55
+  args:
+  - /Users/ciarablanco/Desktop/finalgenomeanalysis/spadesout/K55/configs/config.info
+  config_dir: K55
+  del_after: []
+  output_files: []
+  path: /Users/ciarablanco/miniconda3/envs/finalgenomeanalysis/bin/spades-core
+  short_name: k55
+- STAGE: K77
+  args:
+  - /Users/ciarablanco/Desktop/finalgenomeanalysis/spadesout/K77/configs/config.info
+  config_dir: K77
+  del_after: []
+  output_files: []
+  path: /Users/ciarablanco/miniconda3/envs/finalgenomeanalysis/bin/spades-core
+  short_name: k77
+- STAGE: K99
+  args:
+  - /Users/ciarablanco/Desktop/finalgenomeanalysis/spadesout/K99/configs/config.info
+  config_dir: K99
+  del_after: []
+  output_files: []
+  path: /Users/ciarablanco/miniconda3/envs/finalgenomeanalysis/bin/spades-core
+  short_name: k99
+- STAGE: K127
+  args:
+  - /Users/ciarablanco/Desktop/finalgenomeanalysis/spadesout/K127/configs/config.info
+  config_dir: K127
+  del_after: []
+  output_files: []
+  path: /Users/ciarablanco/miniconda3/envs/finalgenomeanalysis/bin/spades-core
+  short_name: k127
+- STAGE: Copy files
+  args:
+  - /Users/ciarablanco/miniconda3/envs/finalgenomeanalysis/share/spades/spades_pipeline/scripts/copy_files.py
+  - /Users/ciarablanco/Desktop/finalgenomeanalysis/spadesout/K127/before_rr.fasta
+  - /Users/ciarablanco/Desktop/finalgenomeanalysis/spadesout/before_rr.fasta
+  - /Users/ciarablanco/Desktop/finalgenomeanalysis/spadesout/K127/assembly_graph_after_simplification.gfa
+  - /Users/ciarablanco/Desktop/finalgenomeanalysis/spadesout/assembly_graph_after_simplification.gfa
+  - /Users/ciarablanco/Desktop/finalgenomeanalysis/spadesout/K127/final_contigs.fasta
+  - /Users/ciarablanco/Desktop/finalgenomeanalysis/spadesout/contigs.fasta
+  - /Users/ciarablanco/Desktop/finalgenomeanalysis/spadesout/K127/first_pe_contigs.fasta
+  - /Users/ciarablanco/Desktop/finalgenomeanalysis/spadesout/first_pe_contigs.fasta
+  - /Users/ciarablanco/Desktop/finalgenomeanalysis/spadesout/K127/strain_graph.gfa
+  - /Users/ciarablanco/Desktop/finalgenomeanalysis/spadesout/strain_graph.gfa
+  - /Users/ciarablanco/Desktop/finalgenomeanalysis/spadesout/K127/scaffolds.fasta
+  - /Users/ciarablanco/Desktop/finalgenomeanalysis/spadesout/scaffolds.fasta
+  - /Users/ciarablanco/Desktop/finalgenomeanalysis/spadesout/K127/scaffolds.paths
+  - /Users/ciarablanco/Desktop/finalgenomeanalysis/spadesout/scaffolds.paths
+  - /Users/ciarablanco/Desktop/finalgenomeanalysis/spadesout/K127/assembly_graph_with_scaffolds.gfa
+  - /Users/ciarablanco/Desktop/finalgenomeanalysis/spadesout/assembly_graph_with_scaffolds.gfa
+  - /Users/ciarablanco/Desktop/finalgenomeanalysis/spadesout/K127/assembly_graph.fastg
+  - /Users/ciarablanco/Desktop/finalgenomeanalysis/spadesout/assembly_graph.fastg
+  - /Users/ciarablanco/Desktop/finalgenomeanalysis/spadesout/K127/final_contigs.paths
+  - /Users/ciarablanco/Desktop/finalgenomeanalysis/spadesout/contigs.paths
+  config_dir: ''
+  del_after:
+  - .bin_reads
+  - tmp/spades_95n6a_yg
+  output_files: []
+  path: /Users/ciarablanco/miniconda3/envs/finalgenomeanalysis/bin/python3
+  short_name: copy_files
+- STAGE: Assembling
+  args: []
+  config_dir: ''
+  del_after: []
+  output_files: []
+  path: 'true'
+  short_name: as_finish
+- STAGE: Breaking scaffolds
+  args:
+  - /Users/ciarablanco/miniconda3/envs/finalgenomeanalysis/share/spades/spades_pipeline/scripts/breaking_scaffolds_script.py
+  - --result_scaffolds_filename
+  - /Users/ciarablanco/Desktop/finalgenomeanalysis/spadesout/scaffolds.fasta
+  - --misc_dir
+  - /Users/ciarablanco/Desktop/finalgenomeanalysis/spadesout/misc
+  - --threshold_for_breaking_scaffolds
+  - '3'
+  config_dir: ''
+  del_after: []
+  output_files: []
+  path: /Users/ciarablanco/miniconda3/envs/finalgenomeanalysis/bin/python3
+  short_name: bs
+- STAGE: Terminate
+  args: []
+  config_dir: ''
+  del_after:
+  - configs
+  output_files: []
+  path: 'true'
+  short_name: terminate
